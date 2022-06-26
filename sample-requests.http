@@ -1,0 +1,134 @@
+###
+GET http://localhost:8080/interestingSites/1/tracks
+
+###
+GET http://localhost:8080/tracks/1/interestingSites
+
+### 3rd manager
+GET http://localhost:8080/managers
+
+###
+POST http://localhost:8080/managers
+Content-Type: application/json
+
+{
+  "name": "anonymous"
+}
+
+###
+GET http://localhost:8080/managers/3
+
+###
+PUT http://localhost:8080/tracks/1/manager/3
+
+###
+GET http://localhost:8080/tracks/1/manager
+
+###
+PUT http://localhost:8080/managers/3
+Content-Type: application/json
+
+{
+  "name": "unanonymous"
+}
+
+###
+GET http://localhost:8080/tracks/1/manager
+
+###
+DELETE http://localhost:8080/managers/3
+
+###
+GET http://localhost:8080/tracks/1/manager
+
+###
+PUT http://localhost:8080/tracks/1/manager/1
+
+### 3rd track
+GET http://localhost:8080/tracks
+
+###
+POST http://localhost:8080/tracks
+Content-Type: application/json
+
+{
+  "type": "TOURIST_TRACK",
+  "color": "RED",
+  "lastModified": "2021-10-26"
+}
+
+###
+GET http://localhost:8080/tracks/3
+
+###
+PUT http://localhost:8080/tracks/3
+Content-Type: application/json
+
+{
+  "type": "TOURIST_TRACK",
+  "color": "BLUE",
+  "lastModified": "2021-10-26"
+}
+
+###
+DELETE http://localhost:8080/tracks/3
+
+### 3rd interesting site
+GET http://localhost:8080/interestingSites
+
+###
+POST http://localhost:8080/interestingSites
+Content-Type: application/json
+
+{
+  "name": "Lucni bouda",
+  "altitude": 1411,
+  "GPSDirection": "NE",
+  "GPSLatitude": 50.7345308,
+  "GPSLongitude": 15.6972142
+}
+
+###
+GET http://localhost:8080/interestingSites/3
+
+###
+PUT http://localhost:8080/interestingSites/3/tracks/1
+
+###
+PUT http://localhost:8080/interestingSites/3/tracks/2
+
+###
+GET http://localhost:8080/interestingSites/3/tracks
+
+###
+GET http://localhost:8080/tracks/1/interestingSites
+
+###
+GET http://localhost:8080/tracks/2/interestingSites
+
+### PUT 1st interesting site (change altitude)
+PUT http://localhost:8080/interestingSites/1
+Content-Type: application/json
+
+{
+  "name": "Ceska postovna na Snezce",
+  "altitude": 1602,
+  "GPSDirection": "NE",
+  "GPSLatitude": 50.7359283,
+  "GPSLongitude": 15.7401856
+}
+
+###
+DELETE http://localhost:8080/interestingSites/3
+
+###
+GET http://localhost:8080/tracks/1/interestingSites
+
+###
+GET http://localhost:8080/tracks/2/interestingSites
+
+### test relations between interesting sites and tracks
+GET http://localhost:8080/interestingSites/1/tracks
+
+###
+GET http://localhost:8080/tracks/1/interestingSites

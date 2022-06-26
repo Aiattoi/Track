@@ -1,0 +1,71 @@
+### POST MANAGERS
+### 1
+POST http://localhost:8080/managers
+Content-Type: application/json
+
+{
+  "name": "Pavel Novy"
+}
+
+### 2
+POST http://localhost:8080/managers
+Content-Type: application/json
+
+{
+  "name": "Jitka Novotna"
+}
+
+### POST TRACKS
+### 1
+POST http://localhost:8080/tracks
+Content-Type: application/json
+
+{
+  "type": "TOURIST_TRACK",
+  "color": "YELLOW",
+  "lastModified": "2021-04-09"
+}
+
+### 2
+POST http://localhost:8080/tracks
+Content-Type: application/json
+
+{
+  "type": "TOURIST_TRACK",
+  "color": "BLUE",
+  "lastModified": "2019-09-10"
+}
+
+### POST INTERESTING SITES
+### 1
+POST http://localhost:8080/interestingSites
+Content-Type: application/json
+
+{
+  "name": "Ceska postovna na Snezce",
+  "altitude": 1603,
+  "GPSDirection": "NE",
+  "GPSLatitude": 50.7359283,
+  "GPSLongitude": 15.7401856
+}
+
+### 2
+POST http://localhost:8080/interestingSites
+Content-Type: application/json
+
+{
+  "name": "Lavinovy vodopad",
+  "altitude": 1080,
+  "GPSDirection": "NE",
+  "GPSLatitude": 50.7328619,
+  "GPSLongitude": 15.7217458
+}
+
+### PUT RELATIONS BETWEEN MANAGERS AND TRACKS
+PUT http://localhost:8080/tracks/1/manager/1
+
+###
+PUT http://localhost:8080/tracks/2/manager/2
+
+### PUT RELATIONS BETWEEN INTERESTING SITES AND TRACKS
+PUT http://localhost:8080/interestingSites/1/tracks/1
